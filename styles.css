@@ -1,0 +1,70 @@
+body {
+    background-color: #F4F9E9;  /* Light green background for main content */
+    color: #333333;  /* Dark text color */
+    font-family: 'Arial', sans-serif;
+}
+
+.stSidebar {
+    background-color: #A2D9CE;  /* Light teal background for sidebar */
+    color: #333333;  /* Dark text color for sidebar */
+}
+
+.metric-box {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;  /* Space between boxes */
+    background-color: #F4F4F9;  /* Light grey background for metric boxes */
+}
+
+.metric-box h3 {
+    margin: 0;
+    color: #333333;  /* Dark text color */
+    font-size: 18px;  /* Reduced font size */
+}
+
+.metric-box p {
+    font-size: 20px;  /* Reduced font size */
+    margin: 0;
+}
+
+/* Set color for all headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #2C3E50;  /* Darker text color for headers */
+    text-align: center; /* Center align headers */
+}
+
+.bg-lightyellow {
+    background-color: #FFF9C4;  /* Light yellow */
+    color: #333333;  /* Dark text color */
+}
+
+.bg-lightgreen {
+    background-color: #AED581;  /* Light green */
+    color: #333333;  /* Dark text color */
+}
+
+.bg-lightblue {
+    background-color: #81D4FA;  /* Light blue */
+    color: #333333;  /* Dark text color */
+}
+
+.stApp {
+    background-color: #F4F9E9;  /* Light green background for main content */
+    color: #333333;  /* Dark text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%; /* Ensure full height */
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+
