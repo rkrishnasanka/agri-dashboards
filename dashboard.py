@@ -29,34 +29,34 @@ def load_data():
 def display_dashboard(df):
     st.markdown('<div class="center-content">', unsafe_allow_html=True)
 
-    st.header("📊 Village Farming Analytics")
+    st.header("Village Farming Analytics")
     
     col1, col2, col3, col4 = st.columns([1, 1, 1, 2])
 
     with col1:
-        st.subheader("👨‍🌾👩‍🌾Farmer Overview🏘️🌾")
+        st.subheader("Farmer Overview")
         st.markdown("Here you can find an overview of the farmers' data.")
         st.markdown(f"""
             <div class="metric-box bg-lightyellow">
-                <h3>👨‍🌾👩‍🌾Total Farmers</h3>
+                <h3>Total Farmers</h3>
                 <p>{df['Farmer ID'].nunique()}</p>
             </div>
         """, unsafe_allow_html=True)
         st.markdown(f"""
             <div class="metric-box bg-lightgreen">
-                <h3>🏘️ Total Villages</h3>
+                <h3>Total Villages</h3>
                 <p>{df['Village'].nunique()}</p>
             </div>
         """, unsafe_allow_html=True)
         st.markdown(f"""
             <div class="metric-box bg-lightblue">
-                <h3>🌾 Total Land Holding (Ha)</h3>
+                <h3>Total Land Holding (Ha)</h3>
                 <p>{df['Total Area Holding (Ha)'].sum()}</p>
             </div>
         """, unsafe_allow_html=True)
 
     with col2:
-        st.subheader("👨‍🌾Farmers Distribution👩‍🌾")
+        st.subheader("Farmers Distribution")
         st.markdown("Distribution of farmers by gender.")
         production_by_gender = df['Gender M/F'].value_counts()
         fig1, ax1 = plt.subplots()
@@ -66,14 +66,14 @@ def display_dashboard(df):
         plt.clf()  # Clear plot after displaying to avoid overlapping
 
     with col3:
-        st.subheader("Farmers in Selected Village 🏘️👩‍🌾👨‍🌾")
+        st.subheader("Farmers in Selected Village 🏘️")
         st.markdown("Displaying details of farmers in a selected village.")
         selected_village = st.selectbox('Select Village', options=df['Village'].unique())
         village_data = df[df['Village'] == selected_village]
         st.dataframe(village_data[['Farmer ID', 'Name of the Farmer', 'Mobile No', 'Village', 'Total Area Holding (Ha)']])
 
     with col4:
-        st.subheader("🌳 Production of Crop")
+        st.subheader("Production of Crop")
         st.markdown("Displaying production statistics by crop.")
         if 'Production area for crop' in df.columns:
             fig2, ax2 = plt.subplots(figsize=(8, 6))  # Adjust figure size for bar chart
@@ -92,7 +92,7 @@ def display_dashboard(df):
 st.set_page_config(page_title="Village Farming Analytics", page_icon="🌾", layout="wide")
 local_css("styles.css")  # Load custom CSS
 
-st.sidebar.title("👨‍🌾👩‍🌾 Farmer Data Hub")
+st.sidebar.title(" Farmer Data Hub")
 
 # Load data directly from Excel file
 df = load_data()
